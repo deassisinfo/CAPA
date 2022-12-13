@@ -670,6 +670,7 @@ public class Main {
 		InitializeCoinfection initialize = new InitializeCoinfection();
 		Run run = new RunSingleThread();
 		PrintCoinfection stat = new PrintCoinfection();
+		initialize.setGranule(true);
 		
 		
 		int xbin = 10;
@@ -690,7 +691,7 @@ public class Main {
         //Constants.ITER_TO_GROW_FAST = Integer.parseInt(args[0]);
         Constants.ITER_TO_GROW = Integer.parseInt(args[0]);
         
-        Constants.Kd_Granule = Double.parseDouble(args[2]) * 1e10;
+        Constants.Kd_Granule = Double.parseDouble(args[2]);// * 1e10;
         
         Constants.PR_N_HYPHAE = 0.0;//Double.parseDouble(args[1])*Constants.PR_N_HYPHAE;
         Constants.PR_MA_HYPHAE = Double.parseDouble(args[1])*Constants.PR_MA_HYPHAE;
@@ -775,7 +776,7 @@ public class Main {
         //Constants.ITER_TO_GROW_FAST = Integer.parseInt(args[0]);
         //Constants.ITER_TO_GROW = Integer.parseInt(args[0]);
         
-        Constants.Kd_Granule = Double.parseDouble(args[1]) * 1e10;
+        Constants.Kd_Granule = Double.parseDouble(args[1]);// * 1e10;
         
         Constants.PR_N_HYPHAE = 0.0;//Double.parseDouble(args[1])*Constants.PR_N_HYPHAE;
         Constants.PR_MA_HYPHAE = Double.parseDouble(args[2])*Constants.PR_MA_HYPHAE;
@@ -836,7 +837,7 @@ public class Main {
 		///Main.runExperiment101221();
 		//Main.runSA092221(args);
 		//System.out.println("hello word!");
-		Main.baseCoinfectionScenario1(args);
+		Main.baseCoinfectionScenario2(args);
 	}
 
 }
