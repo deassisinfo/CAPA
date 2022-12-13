@@ -17,23 +17,30 @@ import edu.uf.interactable.TNFa;
 
 public class InitializeCoinfection  extends InitializeBaseModel{
 	
+	private boolean granule = false;
+	
+	public void setGranule(boolean granule) {
+		this.granule = granule;
+	}
+	
 	public void initializeMolecules(Voxel[][][] grid, int xbin, int ybin, int zbin, Diffuse diffuse, boolean verbose) {
     	if(verbose) {
     		System.out.println("Initializing Iron, TAFC, Lactoferrin, Transferrin, Hepcidin, IL6, TNF-a, IL10, TGF-b, MIP2, MIP1-b");
     	}
+    	Granule gran = null;
     	TNFa tnfa = TNFa.getMolecule(new double[1][xbin][ybin][zbin], diffuse);
     	IL10 il10 = IL10.getMolecule(new double[1][xbin][ybin][zbin], diffuse);
     	TGFb tgfb = TGFb.getMolecule(new double[1][xbin][ybin][zbin], diffuse);
     	MIP2 mip2 = MIP2.getMolecule(new double[1][xbin][ybin][zbin], diffuse);
     	MIP1B mip1b = MIP1B.getMolecule(new double[1][xbin][ybin][zbin], diffuse);
-    	Granule gran = Granule.getMolecule(new double[1][xbin][ybin][zbin], diffuse);
+    	if(granule)gran = Granule.getMolecule(new double[1][xbin][ybin][zbin], diffuse);
     	
     	MultiThreadExec.setMolecule(tnfa);
     	MultiThreadExec.setMolecule(il10);
     	MultiThreadExec.setMolecule(tgfb);
     	MultiThreadExec.setMolecule(mip2);
     	MultiThreadExec.setMolecule(mip1b);
-    	MultiThreadExec.setMolecule(gran);
+    	if(granule)MultiThreadExec.setMolecule(gran);
     	
     	
     	Voxel.setMolecule(TNFa.NAME, tnfa);
@@ -41,7 +48,7 @@ public class InitializeCoinfection  extends InitializeBaseModel{
     	Voxel.setMolecule(TGFb.NAME, tgfb);
     	Voxel.setMolecule(MIP2.NAME, mip2);
     	Voxel.setMolecule(MIP1B.NAME, mip1b);
-    	Voxel.setMolecule(Granule.NAME, gran, true);
+    	if(granule)Voxel.setMolecule(Granule.NAME, gran, true);
     }
 
 	
