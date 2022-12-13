@@ -1,6 +1,7 @@
 # CAPA
 
 CAPA1.jar runs scenario1
+
 java -jar CAPA1.jar ITER_TO_GROW PR_N_KILL PR_MA_KILL NUM_MA NUM_N
 
 ITER_TO_GROW is an integer number indicating the number of interactions it takes for a new septae to be generated.
@@ -18,6 +19,7 @@ example:
 $ java -jar CAPA1.jar 118 0.0691232398232442 0.722728420708909 864 706
 
 CAPA2.jar runs scenario2
+
 java -jar CAPA2.jar ITER_TO_GROW PR_MA_KILL GRANULE_Kd GRANULE_HALF_LIFE NUM_MA NUM_N
 
 ITER_TO_GROW is an integer number indicating the number of interactions it takes for a new septae to be generated.
