@@ -25,7 +25,7 @@ public class InitializeCoinfection  extends InitializeBaseModel{
 	
 	public void initializeMolecules(Voxel[][][] grid, int xbin, int ybin, int zbin, Diffuse diffuse, boolean verbose) {
     	if(verbose) {
-    		System.out.println("Initializing Iron, TAFC, Lactoferrin, Transferrin, Hepcidin, IL6, TNF-a, IL10, TGF-b, MIP2, MIP1-b");
+    		//System.out.println("Initializing Iron, TAFC, Lactoferrin, Transferrin, Hepcidin, IL6, TNF-a, IL10, TGF-b, MIP2, MIP1-b");
     	}
     	Granule gran = null;
     	TNFa tnfa = TNFa.getMolecule(new double[1][xbin][ybin][zbin], diffuse);
